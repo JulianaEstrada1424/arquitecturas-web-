@@ -1,29 +1,293 @@
-<h1>
-    Hola mundo mi nombre es <u>Juliana Estrada</u>
-    Mi email es juliana.estrada0746@utc.edu.ec
-</h1>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Aprende qué es una arquitectura de microservicios, cómo se compara con un monolito y qué herramientas se utilizan.">
+  <meta name="theme-color" content="#ffffff">
+  <title>Microservicios | Arquitectura desacoplada</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+  <script src="script.js" defer></script>
+</head>
 <body>
-    <table border="1" cellpadding="10" cellspacing="0">
-        <tr>
-            <th> APELLIDO</th>
-            <th> Estrada</th>
-        </tr>
-        <tr>
-            <th> NOMBRE</th>
-            <th> Juliana</th>
-        </tr>
-        <tr>
-            <th> EMAIL</th>
-            <th> juliana.estrada0746</th>
-        </tr>
-        <tr>
-            <th> DIRECCION</th>
-            <th> Latacunga</th>
-        </tr>
-        <tr>
-            <th> ACERCA DE MI/th>
-            <th> Soy estudiante de la Universidad Tecnica de Cotopaxi de la carrea de ingenieria de software, tengo 21 anios de edad/th>
-        </tr>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+  <header>
+    <nav class="navbar navbar-expand-lg fixed-top site-navbar" aria-label="Navegación principal">
+      <div class="container">
+        <a class="navbar-brand brand-mark" href="#inicio" aria-label="Microservicios, ir al inicio">
+          <span class="brand-icon" aria-hidden="true"><i class="bi bi-diagram-3-fill"></i></span>
+          <span>Micro<span>servicios</span></span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavigation" aria-controls="mainNavigation" aria-expanded="false" aria-label="Abrir menú de navegación">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mainNavigation">
+          <ul class="navbar-nav ms-auto align-items-lg-center">
+            <li class="nav-item"><a class="nav-link" href="#concepto">Concepto</a></li>
+            <li class="nav-item"><a class="nav-link" href="#comparativa">Comparativa</a></li>
+            <li class="nav-item"><a class="nav-link" href="#caracteristicas">Características</a></li>
+            <li class="nav-item"><a class="nav-link" href="#tecnologias">Tecnologías</a></li>
+            <li class="nav-item"><a class="nav-link" href="#cuestionario">Cuestionario</a></li>
+            <li class="nav-item ms-lg-2"><a class="nav-link nav-cta" href="#cuestionario">Pon a prueba lo aprendido <i class="bi bi-arrow-right" aria-hidden="true"></i></a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
 
-    </table>
+  <main id="contenido">
+    <section class="hero-section" id="inicio" aria-labelledby="hero-title">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-7 reveal">
+            <span class="eyebrow"><span class="eyebrow-dot"></span> Una guía para empezar</span>
+            <h1 id="hero-title">Una gran aplicación.<br><span>Muchos servicios pequeños.</span></h1>
+            <p class="hero-copy">Descubre cómo los microservicios ayudan a construir sistemas flexibles, escalables y preparados para evolucionar.</p>
+            <div class="d-flex flex-wrap gap-3 align-items-center">
+              <a class="btn btn-primary btn-lg rounded-pill px-4" href="#concepto">Comenzar <i class="bi bi-arrow-down ms-2" aria-hidden="true"></i></a>
+              <a class="hero-secondary-link" href="#diagrama"><i class="bi bi-play-circle me-2" aria-hidden="true"></i>Ver cómo se conectan</a>
+            </div>
+            <div class="hero-note"><i class="bi bi-check-circle-fill" aria-hidden="true"></i> Explicado de forma sencilla, paso a paso</div>
+          </div>
+          <div class="col-lg-5 reveal">
+            <div class="hero-illustration" role="img" aria-label="Ilustración de servicios independientes conectados">
+              <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+              <div class="hero-node node-gateway"><i class="bi bi-diagram-3-fill" aria-hidden="true"></i><span>Gateway</span></div>
+              <div class="hero-node node-orders"><i class="bi bi-bag-check-fill" aria-hidden="true"></i><span>Pedidos</span></div>
+              <div class="hero-node node-users"><i class="bi bi-people-fill" aria-hidden="true"></i><span>Usuarios</span></div>
+              <div class="hero-node node-payments"><i class="bi bi-credit-card-fill" aria-hidden="true"></i><span>Pagos</span></div>
+              <div class="floating-badge badge-independent"><i class="bi bi-box-seam" aria-hidden="true"></i> Independientes</div>
+              <div class="floating-badge badge-connected"><span></span> Conectados por API</div>
+              <div class="hero-sparkle sparkle-one" aria-hidden="true">✦</div>
+              <div class="hero-sparkle sparkle-two" aria-hidden="true">✧</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-padding" id="concepto" aria-labelledby="concept-title">
+      <div class="container">
+        <div class="section-heading text-center reveal">
+          <span class="section-kicker">Empecemos por lo esencial</span>
+          <h2 id="concept-title">¿Qué es una arquitectura desacoplada?</h2>
+          <p>Una forma de organizar una aplicación como un conjunto de servicios pequeños que colaboran entre sí.</p>
+        </div>
+        <div class="row align-items-center g-4 g-lg-5 mt-2">
+          <div class="col-lg-6 reveal">
+            <div class="analogy-card">
+              <div class="analogy-icon"><i class="bi bi-cup-hot-fill" aria-hidden="true"></i></div>
+              <span class="analogy-label">Una analogía cotidiana</span>
+              <h3>Piensa en un restaurante</h3>
+              <p>En lugar de que una sola persona haga todo, hay una cocina, una caja y un equipo de atención. Cada área se especializa en una tarea y coordina su trabajo con las demás.</p>
+              <p class="mb-0">En una aplicación, cada servicio funciona de forma parecida: se ocupa de una capacidad concreta —como usuarios, pagos o pedidos— y se comunica con los otros mediante interfaces bien definidas.</p>
+            </div>
+          </div>
+          <div class="col-lg-6 reveal">
+            <div class="concept-points">
+              <div class="concept-point"><span class="point-icon"><i class="bi bi-puzzle-fill" aria-hidden="true"></i></span><div><h3>Una responsabilidad clara</h3><p>Cada servicio resuelve una parte específica del negocio.</p></div></div>
+              <div class="concept-point"><span class="point-icon"><i class="bi bi-arrow-left-right" aria-hidden="true"></i></span><div><h3>Comunicación por contratos</h3><p>Intercambian información mediante APIs o mensajes.</p></div></div>
+              <div class="concept-point"><span class="point-icon"><i class="bi bi-shield-check" aria-hidden="true"></i></span><div><h3>Menos dependencias directas</h3><p>Un cambio local no tiene por qué afectar a toda la aplicación.</p></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-padding section-tint" id="comparativa" aria-labelledby="comparison-title">
+      <div class="container">
+        <div class="section-heading text-center reveal">
+          <span class="section-kicker">Dos maneras de construir</span>
+          <h2 id="comparison-title">Monolito vs. microservicios</h2>
+          <p>Ambos enfoques son válidos. La elección depende del producto, el equipo y su contexto.</p>
+        </div>
+        <div class="comparison-grid reveal">
+          <article class="comparison-card">
+            <div class="comparison-title"><span class="comparison-icon monolith-icon"><i class="bi bi-box-fill" aria-hidden="true"></i></span><div><span class="card-overline">Aplicación unificada</span><h3>Monolito</h3></div></div>
+            <p class="comparison-intro">La interfaz, la lógica y las funciones de negocio se empaquetan y despliegan como una sola unidad.</p>
+            <ul class="comparison-list">
+              <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i><span>Más sencillo de iniciar y desplegar al principio.</span></li>
+              <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i><span>Las partes comparten el mismo código y proceso.</span></li>
+              <li><i class="bi bi-exclamation-circle-fill" aria-hidden="true"></i><span>Un cambio puede requerir reconstruir toda la aplicación.</span></li>
+              <li><i class="bi bi-exclamation-circle-fill" aria-hidden="true"></i><span>Escalar una función suele escalar también las demás.</span></li>
+            </ul>
+          </article>
+          <article class="comparison-card comparison-card-featured">
+            <div class="comparison-title"><span class="comparison-icon micro-icon"><i class="bi bi-diagram-3-fill" aria-hidden="true"></i></span><div><span class="card-overline">Servicios especializados</span><h3>Microservicios</h3></div><span class="featured-tag">Modular</span></div>
+            <p class="comparison-intro">La aplicación se compone de servicios autónomos que se comunican a través de interfaces.</p>
+            <ul class="comparison-list">
+              <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i><span>Cada servicio puede desplegarse de forma independiente.</span></li>
+              <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i><span>Es posible escalar solo la capacidad que lo necesita.</span></li>
+              <li><i class="bi bi-exclamation-circle-fill" aria-hidden="true"></i><span>La comunicación y operación distribuida añaden complejidad.</span></li>
+              <li><i class="bi bi-exclamation-circle-fill" aria-hidden="true"></i><span>Se necesitan buenas prácticas de observabilidad y seguridad.</span></li>
+            </ul>
+          </article>
+        </div>
+        <p class="comparison-footnote text-center"><i class="bi bi-lightbulb-fill me-2" aria-hidden="true"></i>Los microservicios no son siempre la mejor opción: evita distribuir un sistema antes de que exista una necesidad real.</p>
+      </div>
+    </section>
+
+    <section class="section-padding" id="caracteristicas" aria-labelledby="features-title">
+      <div class="container">
+        <div class="section-heading text-center reveal">
+          <span class="section-kicker">La esencia del enfoque</span>
+          <h2 id="features-title">Características clave</h2>
+          <p>Estos principios dan autonomía a los equipos y flexibilidad a los sistemas.</p>
+        </div>
+        <div class="row g-3 g-lg-4 mt-2">
+          <div class="col-sm-6 col-lg-4 reveal"><article class="feature-card"><span class="feature-icon"><i class="bi bi-unlock-fill" aria-hidden="true"></i></span><h3>Independencia</h3><p>Un servicio puede cambiar sin modificar el código interno de los demás.</p></article></div>
+          <div class="col-sm-6 col-lg-4 reveal"><article class="feature-card"><span class="feature-icon"><i class="bi bi-graph-up-arrow" aria-hidden="true"></i></span><h3>Escalabilidad</h3><p>Añade recursos al servicio que tiene más demanda, no a todo el sistema.</p></article></div>
+          <div class="col-sm-6 col-lg-4 reveal"><article class="feature-card"><span class="feature-icon"><i class="bi bi-rocket-takeoff-fill" aria-hidden="true"></i></span><h3>Despliegue autónomo</h3><p>Publica una mejora de forma independiente, si se respetan los contratos.</p></article></div>
+          <div class="col-sm-6 col-lg-4 reveal"><article class="feature-card"><span class="feature-icon"><i class="bi bi-life-preserver" aria-hidden="true"></i></span><h3>Tolerancia a fallos</h3><p>Aísla problemas con límites, reintentos y respuestas alternativas bien diseñadas.</p></article></div>
+          <div class="col-sm-6 col-lg-4 reveal"><article class="feature-card"><span class="feature-icon"><i class="bi bi-code-slash" aria-hidden="true"></i></span><h3>Tecnologías heterogéneas</h3><p>Elige el lenguaje o almacenamiento más adecuado para cada servicio.</p></article></div>
+          <div class="col-sm-6 col-lg-4 reveal"><article class="feature-card"><span class="feature-icon"><i class="bi bi-people-fill" aria-hidden="true"></i></span><h3>Equipos autónomos</h3><p>Equipos pequeños pueden responsabilizarse de un servicio de principio a fin.</p></article></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-padding section-tint" id="diagrama" aria-labelledby="diagram-title">
+      <div class="container">
+        <div class="section-heading text-center reveal">
+          <span class="section-kicker">Una vista de conjunto</span>
+          <h2 id="diagram-title">¿Cómo se conectan?</h2>
+          <p>El gateway recibe las solicitudes y las dirige al servicio correspondiente.</p>
+        </div>
+        <div class="diagram-card reveal">
+          <div class="diagram-legend"><span><i class="legend-dot gateway-dot"></i>Entrada</span><span><i class="legend-dot service-dot"></i>Servicio</span><span><i class="legend-dot database-dot"></i>Base de datos propia</span></div>
+          <div class="diagram-scroll" tabindex="0" role="region" aria-label="Diagrama de arquitectura de microservicios; desplázate horizontalmente si es necesario">
+            <svg class="architecture-diagram" viewBox="0 0 920 390" role="img" aria-labelledby="architecture-title architecture-description">
+              <title id="architecture-title">Diagrama de una arquitectura de microservicios</title>
+              <desc id="architecture-description">El cliente se conecta al API Gateway, que enruta solicitudes a los servicios de usuarios, pedidos y pagos. Cada servicio tiene su propia base de datos.</desc>
+              <defs>
+                <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#8aa6c4"></path></marker>
+              </defs>
+              <rect x="30" y="152" width="118" height="66" rx="16" fill="#f1f6fc" stroke="#dce8f5"></rect>
+              <text x="89" y="181" text-anchor="middle" class="diagram-label">Cliente</text><text x="89" y="201" text-anchor="middle" class="diagram-small">Web / móvil</text>
+              <path d="M148 185 H218" class="diagram-line" marker-end="url(#arrow)"></path>
+              <rect x="230" y="137" width="150" height="96" rx="18" fill="#0d6efd"></rect>
+              <text x="305" y="178" text-anchor="middle" class="diagram-white">API Gateway</text><text x="305" y="201" text-anchor="middle" class="diagram-white-small">Autenticación · rutas</text>
+              <path d="M380 184 H430 V76 H486" class="diagram-line" marker-end="url(#arrow)"></path>
+              <path d="M380 184 H486" class="diagram-line" marker-end="url(#arrow)"></path>
+              <path d="M380 184 H430 V292 H486" class="diagram-line" marker-end="url(#arrow)"></path>
+              <g><rect x="500" y="42" width="160" height="68" rx="15" fill="#e8f2ff" stroke="#c7ddff"></rect><text x="580" y="72" text-anchor="middle" class="diagram-label">Servicio de usuarios</text><text x="580" y="92" text-anchor="middle" class="diagram-small">Perfil · identidad</text>
+                <path d="M660 76 H707" class="diagram-line" marker-end="url(#arrow)"></path><ellipse cx="777" cy="63" rx="53" ry="14" fill="#d9f4ed" stroke="#a8e4d2"></ellipse><path d="M724 63 V91 C724 99 748 105 777 105 S830 99 830 91 V63" fill="#d9f4ed" stroke="#a8e4d2"></path><ellipse cx="777" cy="91" rx="53" ry="14" fill="#d9f4ed" stroke="#a8e4d2"></ellipse><text x="777" y="84" text-anchor="middle" class="diagram-small">DB usuarios</text></g>
+              <g><rect x="500" y="150" width="160" height="68" rx="15" fill="#e8f2ff" stroke="#c7ddff"></rect><text x="580" y="180" text-anchor="middle" class="diagram-label">Servicio de pedidos</text><text x="580" y="200" text-anchor="middle" class="diagram-small">Carrito · órdenes</text>
+                <path d="M660 184 H707" class="diagram-line" marker-end="url(#arrow)"></path><ellipse cx="777" cy="171" rx="53" ry="14" fill="#d9f4ed" stroke="#a8e4d2"></ellipse><path d="M724 171 V199 C724 207 748 213 777 213 S830 207 830 199 V171" fill="#d9f4ed" stroke="#a8e4d2"></path><ellipse cx="777" cy="199" rx="53" ry="14" fill="#d9f4ed" stroke="#a8e4d2"></ellipse><text x="777" y="192" text-anchor="middle" class="diagram-small">DB pedidos</text></g>
+              <g><rect x="500" y="258" width="160" height="68" rx="15" fill="#e8f2ff" stroke="#c7ddff"></rect><text x="580" y="288" text-anchor="middle" class="diagram-label">Servicio de pagos</text><text x="580" y="308" text-anchor="middle" class="diagram-small">Cobros · facturas</text>
+                <path d="M660 292 H707" class="diagram-line" marker-end="url(#arrow)"></path><ellipse cx="777" cy="279" rx="53" ry="14" fill="#d9f4ed" stroke="#a8e4d2"></ellipse><path d="M724 279 V307 C724 315 748 321 777 321 S830 315 830 307 V279" fill="#d9f4ed" stroke="#a8e4d2"></path><ellipse cx="777" cy="307" rx="53" ry="14" fill="#d9f4ed" stroke="#a8e4d2"></ellipse><text x="777" y="300" text-anchor="middle" class="diagram-small">DB pagos</text></g>
+              <text x="777" y="357" text-anchor="middle" class="diagram-caption">Cada servicio gestiona sus datos</text>
+            </svg>
+          </div>
+          <p class="diagram-note mb-0"><i class="bi bi-info-circle-fill me-2" aria-hidden="true"></i>En un diseño habitual, los servicios son propietarios de sus datos; otros servicios los consultan a través de APIs o eventos, no accediendo directamente a su base de datos.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-padding" id="balance" aria-labelledby="balance-title">
+      <div class="container">
+        <div class="section-heading text-center reveal">
+          <span class="section-kicker">Una decisión con matices</span>
+          <h2 id="balance-title">Ventajas y desafíos</h2>
+          <p>Más autonomía también significa más responsabilidad operativa.</p>
+        </div>
+        <div class="row g-4 mt-2">
+          <div class="col-lg-6 reveal"><article class="balance-card advantages-card">
+            <div class="balance-heading"><span class="balance-icon"><i class="bi bi-stars" aria-hidden="true"></i></span><h3>Ventajas</h3></div>
+            <ul><li><i class="bi bi-check2-circle" aria-hidden="true"></i><span>Escala selectivamente y aprovecha mejor los recursos.</span></li><li><i class="bi bi-check2-circle" aria-hidden="true"></i><span>Despliega y evoluciona capacidades con independencia.</span></li><li><i class="bi bi-check2-circle" aria-hidden="true"></i><span>Facilita repartir el trabajo entre equipos especializados.</span></li><li><i class="bi bi-check2-circle" aria-hidden="true"></i><span>Permite elegir tecnologías según las necesidades del servicio.</span></li></ul>
+          </article></div>
+          <div class="col-lg-6 reveal"><article class="balance-card challenges-card">
+            <div class="balance-heading"><span class="balance-icon"><i class="bi bi-cone-striped" aria-hidden="true"></i></span><h3>Desafíos</h3></div>
+            <ul><li><i class="bi bi-exclamation-circle" aria-hidden="true"></i><span>La red puede fallar, tener latencia o entregar mensajes repetidos.</span></li><li><i class="bi bi-exclamation-circle" aria-hidden="true"></i><span>Probar y observar un sistema distribuido requiere más herramientas.</span></li><li><i class="bi bi-exclamation-circle" aria-hidden="true"></i><span>Los datos y transacciones entre servicios son más complejos.</span></li><li><i class="bi bi-exclamation-circle" aria-hidden="true"></i><span>Seguridad, despliegues y operación exigen disciplina continua.</span></li></ul>
+          </article></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-padding section-tint" id="tecnologias" aria-labelledby="technology-title">
+      <div class="container">
+        <div class="section-heading text-center reveal">
+          <span class="section-kicker">La caja de herramientas</span>
+          <h2 id="technology-title">Tecnologías comunes</h2>
+          <p>No hay una herramienta única: se combinan según el problema y el entorno.</p>
+        </div>
+        <div class="row g-3 g-lg-4 mt-2">
+          <div class="col-sm-6 col-lg-3 reveal"><article class="tool-card"><span class="tool-icon tool-blue"><i class="bi bi-boxes" aria-hidden="true"></i></span><h3>Docker</h3><p>Empaqueta servicios y dependencias en contenedores portables.</p></article></div>
+          <div class="col-sm-6 col-lg-3 reveal"><article class="tool-card"><span class="tool-icon tool-purple"><i class="bi bi-diagram-2-fill" aria-hidden="true"></i></span><h3>Kubernetes</h3><p>Orquesta contenedores y automatiza su despliegue y escalado.</p></article></div>
+          <div class="col-sm-6 col-lg-3 reveal"><article class="tool-card"><span class="tool-icon tool-cyan"><i class="bi bi-signpost-split-fill" aria-hidden="true"></i></span><h3>API Gateway</h3><p>Gestiona una entrada común, enruta solicitudes y aplica políticas.</p></article></div>
+          <div class="col-sm-6 col-lg-3 reveal"><article class="tool-card"><span class="tool-icon tool-orange"><i class="bi bi-chat-square-dots-fill" aria-hidden="true"></i></span><h3>Kafka / RabbitMQ</h3><p>Facilitan la mensajería asíncrona y la comunicación por eventos.</p></article></div>
+        </div>
+        <div class="tool-tags reveal" aria-label="Otras categorías de herramientas"><span><i class="bi bi-activity" aria-hidden="true"></i> Observabilidad</span><span><i class="bi bi-shield-lock-fill" aria-hidden="true"></i> Seguridad</span><span><i class="bi bi-arrow-repeat" aria-hidden="true"></i> CI/CD</span><span><i class="bi bi-database-fill" aria-hidden="true"></i> Datos por servicio</span></div>
+      </div>
+    </section>
+
+    <section class="section-padding" id="video" aria-labelledby="video-title">
+      <div class="container">
+        <div class="section-heading text-center reveal">
+          <span class="section-kicker">Aprende también en video</span>
+          <h2 id="video-title">Una explicación en pocos minutos</h2>
+          <p>Repasa los conceptos principales con este recurso audiovisual.</p>
+        </div>
+        <div class="video-card reveal">
+          <div class="ratio ratio-16x9 video-frame">
+            <!-- El video se carga desde la carpeta video; actualiza esta ruta si cambias el archivo. -->
+            <video controls preload="metadata" poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1280 720'%3E%3Crect width='1280' height='720' fill='%230d2d52'/%3E%3Ccircle cx='640' cy='360' r='82' fill='%230d6efd'/%3E%3Cpath d='M620 315v90l72-45z' fill='white'/%3E%3Ctext x='640' y='520' text-anchor='middle' fill='white' font-family='Arial,sans-serif' font-size='36'%3EArquitectura de microservicios%3C/text%3E%3C/svg%3E">
+              <source src="video/tick%20tocks12.mp4" type="video/mp4">
+              Tu navegador no admite la reproducción de video HTML5. Puedes <a href="video/tick%20tocks12.mp4">descargar el video</a> para verlo.
+            </video>
+            <!-- Alternativa: reemplaza el elemento video por un iframe de YouTube con la URL de inserción del video.
+            <iframe src="https://www.youtube-nocookie.com/embed/ID_DEL_VIDEO" title="Introducción a los microservicios" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            -->
+          </div>
+          <div class="video-caption"><span><i class="bi bi-play-btn-fill me-2" aria-hidden="true"></i>Introducción a los microservicios</span><span><i class="bi bi-badge-hd-fill me-1" aria-hidden="true"></i>Video responsivo</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-padding quiz-section" id="cuestionario" aria-labelledby="quiz-title">
+      <div class="container">
+        <div class="section-heading text-center reveal">
+          <span class="section-kicker">Tu turno</span>
+          <h2 id="quiz-title">¿Qué tanto aprendiste?</h2>
+          <p>Responde las preguntas y comprueba cuánto sabes sobre microservicios.</p>
+        </div>
+        <div class="quiz-card reveal" id="quiz" aria-live="polite">
+          <div id="quiz-content">
+            <div class="quiz-topline"><span class="quiz-label"><i class="bi bi-lightning-charge-fill me-2" aria-hidden="true"></i>Cuestionario</span><span class="question-counter" id="question-counter">Pregunta 1 de 10</span></div>
+            <div class="progress quiz-progress" role="progressbar" aria-label="Progreso del cuestionario" aria-valuemin="0" aria-valuemax="10" aria-valuenow="1"><div class="progress-bar" id="quiz-progress" style="width: 10%"></div></div>
+            <div id="question-container"></div>
+            <div class="quiz-feedback" id="quiz-feedback" role="status" aria-live="polite" hidden></div>
+            <div class="quiz-actions"><button class="btn btn-outline-primary rounded-pill px-4" id="previous-button" type="button" disabled><i class="bi bi-arrow-left me-2" aria-hidden="true"></i>Anterior</button><button class="btn btn-primary rounded-pill px-4" id="next-button" type="button" disabled>Siguiente<i class="bi bi-arrow-right ms-2" aria-hidden="true"></i></button></div>
+          </div>
+          <div class="quiz-results text-center" id="quiz-results" hidden>
+            <span class="result-icon" id="result-icon"><i class="bi bi-trophy-fill" aria-hidden="true"></i></span>
+            <span class="section-kicker">Cuestionario completado</span>
+            <h3 id="result-message">¡Excelente!</h3>
+            <p class="result-score" id="result-score"></p>
+            <p id="result-detail"></p>
+            <button class="btn btn-primary rounded-pill px-4 mt-2" id="retry-button" type="button"><i class="bi bi-arrow-clockwise me-2" aria-hidden="true"></i>Reintentar</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-main">
+        <a class="navbar-brand brand-mark footer-brand" href="#inicio"><span class="brand-icon"><i class="bi bi-diagram-3-fill" aria-hidden="true"></i></span><span>Micro<span>servicios</span></span></a>
+        <p>Una guía introductoria para estudiantes y profesionales que comienzan a explorar la arquitectura de software. Diseño con <a href="https://getbootstrap.com/" target="_blank" rel="noopener noreferrer">Bootstrap 5</a>, <a href="https://icons.getbootstrap.com/" target="_blank" rel="noopener noreferrer">Bootstrap Icons</a> y tipografía Inter.</p>
+        <a class="footer-top-link" href="#inicio">Volver al inicio <i class="bi bi-arrow-up-right ms-1" aria-hidden="true"></i></a>
+      </div>
+      <div class="footer-bottom"><span>© <span id="current-year"></span> · Recurso educativo</span><span>Diseñado para aprender, compartir y construir.</span></div>
+    </div>
+  </footer>
+
+  <a class="back-to-top" href="#inicio" aria-label="Volver arriba"><i class="bi bi-arrow-up" aria-hidden="true"></i></a>
 </body>
+</html>
